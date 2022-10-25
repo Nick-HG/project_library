@@ -1,0 +1,185 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  --body-max-width: 1200px;
+  --root-color: #fff;
+  --secondary-color: rgb(56, 56, 253);
+}
+
+body {
+  font-family: 'Courier New', Courier, monospace;
+  color: var(--root-color);
+  background-color: #e6e1e1;
+}
+
+
+/* Form-top */
+header {
+  background-color: var(--secondary-color);
+  padding: 2rem;
+}
+
+.container {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  max-width: var(--body-max-width);
+  margin: auto;
+}
+
+.book-log {
+  margin-right: 30px;
+}
+
+
+/* Button and form */
+.open-btn {
+  border-radius: 4px;
+  border: none;
+  background-color: var(--secondary-color);
+  color: var(--root-color);
+  text-align: center;
+  padding: 18px;
+  font-size: 24px;
+  font-weight: bold;
+  cursor: pointer;
+  transition: all 0.8s;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.4);
+}
+
+/* button position */
+.open-btn {
+  position: fixed;
+  bottom: 23px;
+  right: 28px;
+  width: 280px;
+}
+
+.open-btn:after {
+  content: '+';
+  position: absolute;
+  opacity: 0;
+  top: 18px;
+  right: -20px;
+  transition: 0.8s;
+}
+
+.open-btn:hover {
+  padding-right: 16px;
+  padding-left: 8px;
+}
+
+.open-btn:hover::after {
+  opacity: 1;
+  right: 40px;
+}
+
+/* Form contents show onclick */
+.form-popup {
+  display: none;
+  position: fixed;
+  bottom: 0;
+  right: 15px;
+  border: 3px solid #e6e1e1;
+  z-index: 9;
+}
+
+#form-container {
+  max-width: 300px;
+  padding: 10px;
+  background-color: var(--root-color);
+  color: black;
+}
+
+/* Full-width input fields */
+#form-container input[type=text], #form-container input[type=number] {
+  width: 100%;
+  padding: 15px;
+  margin: 5px 0 22px 0;
+  border: 1px solid #e6e1e1;
+  background-color: var(--root-color);
+}
+
+#form-container input[type=text]:focus, #form-container input[type=number]:focus {
+  background-color: #ddd;
+  outline: none;
+}
+
+#form-container input[type=checkbox] {
+  margin-bottom: 20px;
+}
+
+#form-container .form-btn {
+  background-color: var(--secondary-color);
+  color: var(--root-color);
+  padding: 16px 20px;
+  font-size: 16px;
+  font-weight: bold;
+  border: none;
+  cursor: pointer;
+  width: 100%;
+  margin-bottom: 10px;
+  opacity: 0.7;
+  transition: all 0.2s;
+}
+
+#form-container .form-btn:hover {
+  opacity: 1;
+  transition: 0.2s;
+}
+
+#form-container .cancel {
+  background-color: #5f5c5c;
+}
+
+
+/* Display books */
+.display-container {
+  max-width: var(--body-max-width);
+  margin: auto;
+}
+
+.books-container {
+  color: black;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  margin-left: 15px;
+  row-gap: 50px;
+  padding-top: 2rem;
+}
+
+.card {
+  border: none;
+  border-radius: 4px;
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.4);
+  background-color: var(--root-color);
+  opacity: 0.8;
+  font-weight: bold;
+  color: black;
+  width: 300px;
+  height: 200px;
+  
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  line-height: 30px;
+  transition: all .3s ease-in-out;
+}
+
+.card:hover {
+  transform: scale(1.1);
+  box-shadow: 0 10px 20px -8px rgba(0, 0, 0, 0.7);
+  opacity: 1;
+}
+
+.delete-button {
+  padding: 5px;
+  margin: 5px;
+  cursor: pointer;
+}
